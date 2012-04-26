@@ -85,7 +85,7 @@ public:
    * @rhs: The quaternion to be added.
    * @returns: The quaternion containing the sum of *this and rhs.
    */
-  Quaternion operator +(Quaternion& rhs);
+  Quaternion operator +(const Quaternion& rhs);
   
   /**
    * operator -: Difference of quaternions.

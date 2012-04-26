@@ -70,7 +70,7 @@ Quaternion& Quaternion::operator =(const Quaternion& rhs)
   return *this;
 }
 
-Quaternion Quaternion::operator +(Quaternion& rhs)
+Quaternion Quaternion::operator +(const Quaternion& rhs)
 {
   return Quaternion(m[0] + rhs.m[0], m[1] + rhs.m[1], m[2] + rhs.m[2], m[3] + rhs.m[3]);
 }
