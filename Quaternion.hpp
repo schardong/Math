@@ -10,7 +10,7 @@
 #include "stdafx.hpp"
 #include "Scalar.hpp"
 
-namespace Math
+namespace CoreMath
 {
 
 class Quaternion

@@ -10,7 +10,7 @@
 #include "Vector4.hpp"
 #include "BasicMath.hpp"
 
-namespace Math
+namespace CoreMath
 {
 
 Vector4::Vector4(Scalar x, Scalar y, Scalar z, Scalar w)

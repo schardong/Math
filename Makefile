@@ -17,12 +17,11 @@ all:
 	@mkdir -p $(INCOUT_DIR)
 	@cp *.hpp $(INCOUT_DIR)/
 	@$(CC) $(CXXFLAGS) -c *.cpp
-	@ar -cvq $(LIBOUT_DIR)/libcoremath.a *.o
-	@rm -Rf $(INCOUT_DIR)/stdafx.hpp
+	@ar -cvq $(LIBOUT_DIR)/libcoremath_$(CONFIG).a *.o
 
 release: all
 
 clean:
 	@rm -Rf $(OUT_DIR)/*
 	@rm -Rf $(OUT_DIR)
-	@rm -Rf *.o *.*~ *~
+	@rm -Rf *.o *.d *.*~ *~

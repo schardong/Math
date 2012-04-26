@@ -12,7 +12,7 @@
 #include "Vector4.hpp"
 #include "BasicMath.hpp"
 
-namespace Math {
+namespace CoreMath {
 
 Matrix4::Matrix4()
 {
@@ -42,21 +42,22 @@ void Matrix4::transpose()
 {
   Vector4 l;
   Matrix4 m;
-  for(int i = 0; i < 4; i++)
-  {
+  for(int i = 0; i < 4; i++) {
     l = getLine(i);
     m.setColumn(i, l);
   }
   (*this) = m;
 }
 
-Matrix4& Matrix4::operator =(const Matrix4& rhs) {
+Matrix4& Matrix4::operator =(const Matrix4& rhs)
+{
   assert(this != &rhs);
   memcpy(m, rhs.m, sizeof(Scalar) * 16);
   return *this;
 }
 
-Matrix4 Matrix4::operator +(const Matrix4& rhs) {
+Matrix4 Matrix4::operator +(const Matrix4& rhs)
+{
   Matrix4* sum = new Matrix4();
   for(int i = 0; i < 4; i++)
     for(int j = 0; j < 4; j++)
@@ -64,7 +65,8 @@ Matrix4 Matrix4::operator +(const Matrix4& rhs) {
   return *sum;
 }
 
-Matrix4 Matrix4::operator -(const Matrix4& rhs) {
+Matrix4 Matrix4::operator -(const Matrix4& rhs)
+{
   Matrix4* diff = new Matrix4();
   for(int i = 0; i < 4; i++)
     for(int j = 0; j < 4; j++)
@@ -72,14 +74,16 @@ Matrix4 Matrix4::operator -(const Matrix4& rhs) {
   return *diff;
 }
 
-Matrix4& Matrix4::operator -() {
+Matrix4& Matrix4::operator -()
+{
   for(int i = 0; i < 4; i++)
     for(int j = 0; j < 4; j++)
       (*this)[i][j] = -(*this)[i][j];
   return *this;
 }
 
-Matrix4 Matrix4::operator *(const Matrix4& rhs) {
+Matrix4 Matrix4::operator *(const Matrix4& rhs)
+{
   Matrix4* prod = new Matrix4();
   for(int i = 0; i < 4; i++)
     for(int j = 0; j < 4; j++)
@@ -88,7 +92,8 @@ Matrix4 Matrix4::operator *(const Matrix4& rhs) {
   return *prod;
 }
 
-Vector4 Matrix4::operator *(Vector4& rhs) {
+Vector4 Matrix4::operator *(Vector4& rhs)
+{
   Vector4* prod = new Vector4(0.0, 0.0, 0.0, 0.0);
   for(int i = 0; i < 4; i++)
     for(int j = 0; j < 4; j++)
@@ -96,7 +101,8 @@ Vector4 Matrix4::operator *(Vector4& rhs) {
   return *prod;
 }
 
-bool Matrix4::operator ==(const Matrix4& rhs) {
+bool Matrix4::operator ==(const Matrix4& rhs)
+{
   return (
     (*this)[0][0] == rhs[0][0] && (*this)[0][1] == rhs[0][1] && (*this)[0][2] == rhs[0][2] && (*this)[0][3] == rhs[0][3] &&
     (*this)[1][0] == rhs[1][0] && (*this)[1][1] == rhs[1][1] && (*this)[1][2] == rhs[1][2] && (*this)[1][3] == rhs[1][3] &&
@@ -105,7 +111,8 @@ bool Matrix4::operator ==(const Matrix4& rhs) {
   );
 }
 
-bool Matrix4::operator !=(const Matrix4& rhs) {
+bool Matrix4::operator !=(const Matrix4& rhs)
+{
   return (!(*this == rhs));
 }
 

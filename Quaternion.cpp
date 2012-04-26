@@ -7,7 +7,7 @@
 #include "Quaternion.hpp"
 #include "BasicMath.hpp"
 
-namespace Math
+namespace CoreMath
 {
   
 Quaternion::Quaternion(Scalar _w, Scalar _x, Scalar _y, Scalar _z)

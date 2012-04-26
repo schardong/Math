@@ -5,10 +5,10 @@
  * File created on March 20, 2012, 10:39
  */
 
-#ifndef __MATH_STDAFX_HPP__
-#define __MATH_STDAFX_HPP__
+#ifndef __COREMATH_STDAFX_HPP__
+#define __COREMATH_STDAFX_HPP__
 
 #include <cmath>
 #include <iostream>
 
-#endif /* __MATH_STDAFX_HPP__ */
+#endif /* __COREMATH_STDAFX_HPP__ */

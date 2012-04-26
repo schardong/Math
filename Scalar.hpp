@@ -10,7 +10,7 @@
 
 #include "stdafx.hpp"
 
-namespace Math
+namespace CoreMath
 {
 
 #ifdef USE_DOUBLE_PRECISION

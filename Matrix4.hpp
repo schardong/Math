@@ -13,7 +13,7 @@
 #include "Scalar.hpp"
 #include "Vector4.hpp"
 
-namespace Math {
+namespace CoreMath {
 
 class Matrix4 {
 protected:
